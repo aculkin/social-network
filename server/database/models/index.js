@@ -9,14 +9,14 @@ Post.belongsTo(User)
 
 User.belongsToMany(User, {
   foreignKey: 'userId',
-  as: 'friends',
+  as: 'user',
   through: Friend,
 })
-User.belongsToMany(User, {
-  foreignKey: 'friendId',
-  as: 'friends',
-  through: Friend,
-})
+// User.belongsToMany(User, {
+//   foreignKey: 'friendId',
+//   as: 'friend',
+//   through: Friend,
+// })
 User.hasMany(Friend, { foreignKey: 'userId' })
 User.hasMany(Friend, { foreignKey: 'friendId' })
 Friend.belongsTo(User, { foreignKey: 'userId' })
