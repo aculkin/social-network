@@ -10,7 +10,8 @@
     "build": "NODE_ENV=production next build",
     "start": "NODE_ENV=production node server",
     "lint": "next lint",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "start-server": "nodemon server -e js,scss --ignore components --ignore layouts --ignore pages --ignore public"
   },
   "dependencies": {
     "@artsy/fresnel": "^1.7.0",
