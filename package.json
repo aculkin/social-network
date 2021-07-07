@@ -2,11 +2,15 @@
   "name": "social-network",
   "version": "0.1.0",
   "private": true,
+  "cacheDirectories": [
+    ".next/cache"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "NODE_ENV=development npm run start-server",
+    "build": "NODE_ENV=production next build",
+    "start": "NODE_ENV=production node server",
+    "lint": "next lint",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@artsy/fresnel": "^1.7.0",
@@ -41,5 +45,11 @@
   "devDependencies": {
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aculkin/social-network.git"
+  },
+  "author": "Andrew Culkin",
+  "license": "ISC"
 }
